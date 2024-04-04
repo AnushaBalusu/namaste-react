@@ -28,9 +28,8 @@
 
 .restaurant-card {
     margin: 15px;
-    padding: 5px;
-    width: 200px;
-    height: 350px;
+    padding: 10px;
+    width: 250px;
     
 }
 
@@ -46,6 +45,21 @@
 .restaurant-logo {
     width: 100%;
 }
+
+.res-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.res-rating {
+    margin: 20px 0px;
+}
+
+.res-meta {
+    font-size: 14px;
+}
+
+
 
 
 
