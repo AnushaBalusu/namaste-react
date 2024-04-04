@@ -39,14 +39,15 @@ const styleCard = {
     backgroundColor: "#f0f0f0" 
 }
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+    const {resName, cuisine, rating, deliveryTime} = props;
     return (
         <div className="restaurant-card" style={styleCard}>
             <img className="restaurant-logo" alt="res-logo" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&resize=556,505"></img>
-            <h3>Ihop</h3>
-            <h4>Breakfast bowls</h4>
-            <h4>4.3</h4>
-            <h4>30-45 min</h4>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>{props.rating}</h4>
+            <h4>{props.deliveryTime}</h4>
         </div>
     )
 };
@@ -58,8 +59,8 @@ const Body = () => {
                 Search
             </div>
             <div className ="restaurant-container">
-                <RestaurantCard />
-                <RestaurantCard />
+                <RestaurantCard resName="Ihop" cuisine="Breakfast bowls" rating="4.3" deliveryTime="30-40 mins"/>
+                <RestaurantCard resName="Pizzahut" cuisine="Pizza" rating="4.6" deliveryTime="15-30 mins"/>
                 <RestaurantCard />
                 <RestaurantCard />
                 <RestaurantCard />
