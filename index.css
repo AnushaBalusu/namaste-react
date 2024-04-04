@@ -1,3 +1,84 @@
-#heading {
-    color: red;
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
 }
+
+.logo {
+    width: 150px;
+}
+
+.nav-items > ul {
+    font-size: 16px;
+	display: flex;
+    padding: 0px 20px;
+    list-style-type: none;
+
+}
+
+.nav-items > ul > li {
+	padding: 10px;
+    margin: 10px;
+}
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    margin: 15px;
+    padding: 5px;
+    width: 200px;
+    height: 350px;
+    
+}
+
+.restaurant-card:hover {
+    border: 2px solid grey;
+    cursor: pointer;
+}
+
+.search {
+    padding: 10px;
+}
+
+.restaurant-logo {
+    width: 100%;
+}
+
+
+
+/* Show borders */
+.header {
+    border: 1px solid grey;
+}
+
+.logo {
+    border: 2px solid pink;
+}
+
+.nav-items {
+    border: 2px solid purple;
+}
+
+.body {
+    border: 2px solid grey;
+}
+
+.search {
+    border: 2px solid pink;
+}
+
+.restaurant-container {
+    border: 2px solid purple;
+}
+
+.restaurant-logo {
+    border: 2px solid purple;
+}
+
+.restaurant-card > h3 {
+    border: 2px solid purple;
+}
+

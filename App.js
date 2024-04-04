@@ -1,49 +1,84 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+/** 
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search
+ *  - Restaurant Container
+ *      - Restaurant Card
+ *          - Img
+ *          - Name of Res, Rating, Cusine, delivery time
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container"> 
+                <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"></img>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+};
 
-const jsxHeading = <h1>This is a JSX heading</h1>
-
-const element = <span>React Element</span>;
-
-const title = (
-    <h1 className="head" tabIndex="5">
-        {element}
-        This is title component
-    </h1>
-);
-
-const Title = () => (
-    <h1 className="head" tabIndex="5">
-        This is title component
-    </h1>
-);
-
-const number = 1000;
-
-const HeadingComponent = () => {
-    return <h1>This is a React Functional Component</h1>;
+const styleCard = {
+    backgroundColor: "#f0f0f0" 
 }
 
-const HeadingComponent2 = () => <h1>This is a React Functional Component</h1>;
+const RestaurantCard = () => {
+    return (
+        <div className="restaurant-card" style={styleCard}>
+            <img className="restaurant-logo" alt="res-logo" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&resize=556,505"></img>
+            <h3>Ihop</h3>
+            <h4>Breakfast bowls</h4>
+            <h4>4.3</h4>
+            <h4>30-45 min</h4>
+        </div>
+    )
+};
 
-const HeadingComponent3 = () => ( 
-    <div id="container">
-        <Title />
-        {title}
-        {100 + 200}
-        <h1 className="heading">This is a React Functional Component</h1> 
-    </div>
-);
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">
+                Search
+            </div>
+            <div className ="restaurant-container">
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+            </div>
+        </div>
+    )
+};
 
-const headingElement = ( 
-    <h1>This is a React Element</h1> 
-);
-
-console.log(HeadingComponent);
-console.log(headingElement);
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//root.render(headingElement);
-root.render(<HeadingComponent3/>);
- 
+root.render(<AppLayout/>);
