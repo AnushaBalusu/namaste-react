@@ -63,8 +63,8 @@
 
 
 
-/* Show borders */
-.header {
+/* Show borders. This is helpful for debugging in case CSS breaks */
+/* .header {
     border: 1px solid grey;
 }
 
@@ -94,5 +94,5 @@
 
 .restaurant-card > h3 {
     border: 2px solid purple;
-}
+} */
 

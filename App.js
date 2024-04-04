@@ -3200,17 +3200,14 @@ const styleCard = {
 }
 
 const RestaurantCard = (props) => {
-    console.log(props);
     const {resData} = props;
     console.log(resData);
-    console.log(resData.title);
-    console.log(resData.meta[2]);
     return (
         <div className="restaurant-card" style={styleCard}>
             <img className="restaurant-logo" alt="res-logo" src={resData.image.items[5].url}></img>
             <div className="res-title">
             <h3>{resData.title.text}</h3>
-            <span className="res-rating">{resData.rating.text}</span>
+            <span className="res-rating">{resData.rating?.text}</span>
             </div>
             <div className="res-meta">
                 <span>&nbsp;•&nbsp;</span>
@@ -3229,13 +3226,9 @@ const Body = () => {
                 Search
             </div>
             <div className ="restaurant-container">
-                <RestaurantCard resData={resList[0]}/>
-                <RestaurantCard resData={resList[1]}/>
-                <RestaurantCard resData={resList[2]}/>
-                <RestaurantCard resData={resList[3]}/>
-                <RestaurantCard resData={resList[4]}/>
-                <RestaurantCard resData={resList[5]}/>
-                <RestaurantCard resData={resList[6]}/>
+                {
+                    resList.map(restaurant => <RestaurantCard key={restaurant.storeUuid} resData={restaurant}/>)
+                }
             </div>
         </div>
     )
