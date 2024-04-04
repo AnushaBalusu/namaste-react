@@ -60,6 +60,11 @@
     font-size: 14px;
 }
 
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
+}
+
 
 
 

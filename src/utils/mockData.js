@@ -1,4 +1,4 @@
-const resList = [
+let resList = [
     {
       "storeUuid": "65849eed-12b6-4805-9c2c-5c7fcb22da35",
       "title": {
