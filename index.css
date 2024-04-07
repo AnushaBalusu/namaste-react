@@ -78,6 +78,13 @@
     background-color: #f0f0f0;
 }
 
+.login {
+    padding: 0 20px;
+}
+
+.filter {
+    display: flex;
+}
 
 
 /* Show borders. This is helpful for debugging in case CSS breaks */
