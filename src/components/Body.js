@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import { API_SWIGGY_RESTRO_LIST, EATS_API_LIST_STORES } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -39,7 +40,7 @@ const Body = () => {
             </div>
             <div className ="restaurant-container">
                 {
-                    filteredRestaurants.map(restaurant => <RestaurantCard key={restaurant.info?.id} resData={restaurant}/>)
+                    filteredRestaurants.map(restaurant => <Link key={restaurant.info?.id} to={"/restaurant/" + restaurant.info?.id}><RestaurantCard resData={restaurant}/></Link>)
                 }
             </div>
         </div>
