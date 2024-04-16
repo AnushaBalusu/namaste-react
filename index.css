@@ -86,6 +86,11 @@
     display: flex;
 }
 
+.user-card {
+    padding: 10px;
+    border: 1px solid grey;
+}
+
 
 /* Show borders. This is helpful for debugging in case CSS breaks */
 /* .header {
