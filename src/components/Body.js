@@ -5,6 +5,8 @@ import { API_SWIGGY_RESTRO_LIST, EATS_API_LIST_STORES } from "../utils/constants
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 
 const Body = () => {
 
@@ -27,6 +29,7 @@ const Body = () => {
     const onlineStatus = useOnlineStatus();
     if(onlineStatus === false) return (<h1>Looks like you are offline!! Please check your internet connection!</h1>);
 
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
@@ -44,6 +47,13 @@ const Body = () => {
                     const filteredListOfRestaurants = listOfRestaurants.filter((restaurant) => restaurant?.info?.avgRating >= 4.5);
                     setListOfRestaurants(filteredListOfRestaurants);
                 }}>Top Rated Restaurants</button>
+            </div>
+
+            <div className="m-4 p-2 flex items-center">
+                <label>UserName</label>
+                <input className="p-2 m-2 rounded-lg border border-black" 
+                    value={loggedInUser}
+                    onChange={(e) => setUserName(e.target.value)}></input>
             </div>
                 
             </div>
