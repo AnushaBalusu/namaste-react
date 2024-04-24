@@ -2,11 +2,14 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
     const {resId} = useParams();
 
     const resInfo = useRestaurantMenu(resId);
+
+    const [showIndex, setShowIndex] = useState(0); // by default 1st accordion is expanded
 
     if(resInfo === null) return <Shimmer/>;
 
@@ -25,7 +28,12 @@ const RestaurantMenu = () => {
             <p className="font-bold text-lg">{cuisines.join(", ")} - {costForTwoMessage}</p>
             
             {/** categories accordion */}
-            {itemCategories.map((category) =>  <RestaurantCategory key={category?.card?.card?.title} categoryData={category?.card?.card}/>)}
+            {itemCategories.map((category, index) =>  (
+            // controlled component
+            <RestaurantCategory key={category?.card?.card?.title} 
+                categoryData={category?.card?.card} 
+                showItems={index === showIndex} 
+                setShowIndex={() => setShowIndex(index)}/>))}
         </div>
     )
 }
