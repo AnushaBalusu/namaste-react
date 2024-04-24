@@ -2,13 +2,11 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 
 
-const RestaurantCategory = ({categoryData}) => {
-
-    const [showItems, setShowItems] = useState(false); 
+const RestaurantCategory = ({categoryData, showItems, setShowIndex}) => {
 
     const toggleShowItems = () => {
-        setShowItems(!showItems);
-    }
+        setShowIndex();
+    };
 
     return <div>
         {/** Accordion Header */}
