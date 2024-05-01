@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import { SWIGGY_IMAGE_URL_MENU } from "../utils/constants";
+
 
 const ItemList = ({ items }) => {
     console.log(items);
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        // dispatch an action
+        dispatch(addItem(item))
+    }
+
     return <div>
         
         {items.map(item => (
@@ -14,7 +24,8 @@ const ItemList = ({ items }) => {
                 </div>
                 <div className="w-3/12" >
                     <div className="absolute mb-0">
-                        <button className="py-1 px-4 mx-12 text-green-900 bg-slate-200 rounded-md">Add</button>
+                        <button className="py-1 px-4 mx-12 text-green-900 bg-slate-200 rounded-md"
+                        onClick = {() => handleAddItem(item)} >Add</button>
                     </div>
                     <img src={SWIGGY_IMAGE_URL_MENU+item?.card?.info?.imageId} className="rounded-xl w-full"></img>
                     
