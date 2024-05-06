@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -15,8 +15,12 @@ const cartSlice = createSlice({
             state.items.pop();
         },
         clearCart: (state) => {
-            state.items.length = 0; // same as []
+            console.log("State", state);
+            console.log("Current State", current(state));
+            state.items.length = 0; // this will work, equivalent of []
             // state = []  --> this will not work
+            // return {items: []}   --> this will work
+            console.log("Reset Current State", current(state));
         }
     }
 });
