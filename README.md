@@ -1,6 +1,6 @@
 # Namaste React
 
-## App Design Outline
+## App Rough Design
  * Header
     - Logo
     - Nav Items
@@ -17,11 +17,6 @@
    - Contact
  
  ![Rough App UI Desing](./docs/images/app-ui-design.png)
-
- 
- ## App UI Display at various stages
- ### Episode 04 Part 02
- <img src="./docs/images/app-ui-ep04-p02.png" alt="App UI after ep04 p02" width="500">
 
 
  # Redux Toolkit
