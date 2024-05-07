@@ -31,3 +31,10 @@
    - Slice (cartSlice)
    - Dispatch (action)
    - Selector
+
+# Setting up Testing in the app
+   - Install React Testing Library
+   - Install Jest
+   - Install Babel dependencies
+   - Configure Babel
+   - Configure parcel config file to disabel default babel transpilation
